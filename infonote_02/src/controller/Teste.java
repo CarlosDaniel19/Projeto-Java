@@ -5,6 +5,7 @@ import model.*;
 public class Teste {
 
 	public static void main(String[] args) {
+		Usuario ddd = new Usuario("c_daniel8@hotmail.com", "daniel", 5646218, "Carlos Daniel", "******", "(21)954-985-498");
 		// TODO Auto-generated method stub
 		Endereco aaa = new Endereco();
 		aaa.setLogradouro("Rua");
@@ -55,16 +56,6 @@ public class Teste {
 		ccc2.setEstoque(17);
 
 		System.out.println(ccc2.toString());
-
-		Usuario ddd = new Usuario();
-		ddd.setEmail("c_daniel8@hotmail.com");
-		ddd.setLogin("daniel");
-		ddd.setMatricula(5646218);
-		ddd.setNome("Carlos Daniel");
-		ddd.setSenha("******");
-		ddd.setTelefone("(21)954-985-498");
-
-		System.out.println(ddd.toString());
 
 		Usuario ddd1 = new Usuario();
 		ddd1.setEmail("c_daniel9@hotmail.com");
