@@ -5,77 +5,40 @@ import model.*;
 public class Teste {
 
 	public static void main(String[] args) {
-		Usuario ddd = new Usuario("c_daniel8@hotmail.com", "daniel", 5646218, "Carlos Daniel", "******", "(21)954-985-498");
-		// TODO Auto-generated method stub
-		Endereco aaa = new Endereco();
-		aaa.setLogradouro("Rua");
-		aaa.setNumero("975");
-		aaa.setComplemento("Casa");
-		aaa.setBairro("Caquizeiros");
-		aaa.setCidade("Rio de Janeiro");
-		aaa.setEstado("Rio de Janeiro");
-		aaa.setCep("23056070");
+		Endereco aaa = new Endereco("Rua", "975", "Casa", "Amoreiras", "Rio de Janeiro", "Rio de Janeiro", "123456789");
 
-		System.out.println(aaa.toString());
+		ItemDePedido bbb = new ItemDePedido(5, 25.00);
 
-		ItemDePedido bbb = new ItemDePedido();
-		bbb.setQtde(5);
-		bbb.setSubtotal(25.00);
+		Notebook ccc = new Notebook(31, "Dell", "Notebook Dell", 15, 1999.99, "klapaucius", "18/11/2018");
 
-		System.out.println(bbb.toString());
+		Notebook ccc1 = new Notebook(72, "HP", "Notebook HP", 14, 1799.99, "galuba", "18/11/2018");
 
-		Notebook ccc = new Notebook();
-		ccc.setNumeroNote(31);
-		ccc.setModelo("Dell");
-		ccc.setPrecoUnitario(1999.99);
-		ccc.setFigura("klapaucius");
-		ccc.setDataCadastro("18/11/2018");
-		ccc.setDescricao("Notebook |Dell");
-		ccc.setEstoque(15);
+		Notebook ccc2 = new Notebook(61, "AlienWare", "Notebook AlienWare", 17, 3999.99, "paskjf", "18/11/2018");
 
-		System.out.println(ccc.toString());
+		Usuario ddd = new Usuario(5646218, "daniel", "******", "Carlos Daniel", "c_daniel8@hotmail.com",
+				"(21)954-985-498");
 
-		Notebook ccc1 = new Notebook();
-		ccc1.setNumeroNote(72);
-		ccc1.setModelo("HP");
-		ccc1.setPrecoUnitario(1799.99);
-		ccc1.setFigura("galuba");
-		ccc1.setDataCadastro("18/11/2018");
-		ccc1.setDescricao("Notebook HP");
-		ccc1.setEstoque(14);
+		Usuario ddd1 = new Usuario(456498, "José", "*******", "José Escalador", "jose.escalador@hotmail.com",
+				"(31) 123-123-456");
 
-		System.out.println(ccc1.toString());
+		Pedido eee = new Pedido(1, "19/11/2018", "Cartão de Crédito", 1999.99, "Separando do estoque");
 
-		Notebook ccc2 = new Notebook();
-		ccc2.setNumeroNote(61);
-		ccc2.setModelo("AlienWare");
-		ccc2.setPrecoUnitario(3999.99);
-		ccc2.setFigura("paskjf");
-		ccc2.setDataCadastro("18/11/2018");
-		ccc2.setDescricao("Notebook AlienWare");
-		ccc2.setEstoque(17);
+//Mostrar Usuário
+		aaa.mostrar();
 
-		System.out.println(ccc2.toString());
+		bbb.mostrar();
 
-		Usuario ddd1 = new Usuario();
-		ddd1.setEmail("c_daniel9@hotmail.com");
-		ddd1.setLogin("daniell");
-		ddd1.setMatricula(564656218);
-		ddd1.setNome("Carlos Daniell");
-		ddd1.setSenha("*******");
-		ddd1.setTelefone("(21)954-985-499");
+		ccc.mostrar();
 
-		System.out.println(ddd1.toString());
+		ccc1.mostrar();
 
-		Pedido fff = new Pedido();
-		fff.setDataEmissao("19/11/2018");
-		fff.setFormaDePagamento("Cartão de Crédito");
-		fff.setNumero(1);
-		fff.setSituacao("Separando do estoque");
-		fff.setValorTotal(1999.99);
+		ccc2.mostrar();
 
-		System.out.println(fff.toString());
+		ddd.mostrar();
+
+		ddd1.mostrar();
+
+		eee.mostrar();
 
 	}
-
 }

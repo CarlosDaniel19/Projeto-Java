@@ -85,4 +85,15 @@ public class Usuario {
 		this.email = email;
 		this.telefone = telefone;
 	}
+
+	public void mostrar() {
+		// Mostrar usuário
+		System.out.println("\n\nUsuário:\n");
+		System.out.println("Matrícula" + this.matricula);
+		System.out.println("Login: " + this.login);
+		System.out.println("Senha: " + this.senha);
+		System.out.println("Nome: " + this.nome);
+		System.out.println("E-mail: " + this.email);
+		System.out.println("Telefone: " + this.telefone);
+	}
 }
