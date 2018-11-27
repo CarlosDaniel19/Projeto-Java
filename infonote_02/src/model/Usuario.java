@@ -89,7 +89,7 @@ public class Usuario {
 	public void mostrar() {
 		// Mostrar usuário
 		System.out.println("\n\nUsuário:\n");
-		System.out.println("Matrícula" + this.matricula);
+		System.out.println("Matrícula: " + this.matricula);
 		System.out.println("Login: " + this.login);
 		System.out.println("Senha: " + this.senha);
 		System.out.println("Nome: " + this.nome);
