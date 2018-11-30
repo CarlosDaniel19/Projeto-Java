@@ -7,7 +7,7 @@ public class Teste {
 	public static void main(String[] args) {
 		Endereco aaa = new Endereco("Rua", "975", "Casa", "Amoreiras", "Rio de Janeiro", "Rio de Janeiro", "123456789");
 
-		ItemDePedido bbb = new ItemDePedido(5, 25.00, null);
+		ItemDePedido bbb = new ItemDePedido(5, 25.00);
 
 		Notebook ccc = new Notebook(31, "Dell", "Notebook Dell", 15, 1999.99, "klapaucius", "18/11/2018");
 

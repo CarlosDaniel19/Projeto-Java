@@ -32,6 +32,12 @@ public class ItemDePedido {
 		super();
 	}
 
+	public ItemDePedido(int qtde, double subtotal) {
+		super();
+		this.qtde = qtde;
+		this.subtotal = subtotal;
+	}
+
 	public ItemDePedido(int qtde, double subtotal, Notebook aux) {
 		super();
 		this.qtde = qtde;
