@@ -38,10 +38,11 @@ public class ItemDePedido {
 		this.subtotal = subtotal;
 	}
 
-	public ItemDePedido(int qtde, double subtotal, Notebook aux) {
+	public ItemDePedido(int qtde, double subtotal, Notebook notebook) {
 		super();
 		this.qtde = qtde;
 		this.subtotal = subtotal;
+		this.notebook = notebook;
 	}
 
 	public Notebook getNotebook() {

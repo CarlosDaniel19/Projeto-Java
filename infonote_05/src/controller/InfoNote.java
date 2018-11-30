@@ -7,6 +7,8 @@ import model.*;
 public class InfoNote {
 
 	Usuario ddd;
+	Notebook notebooks[] = new Notebook[10];
+	Pedido pedido;
 	boolean logado = false;
 
 	public InfoNote() {
@@ -23,9 +25,6 @@ public class InfoNote {
 				"img\\bd22br.jpg", "10/06/2011");
 
 	}
-
-	Notebook notebooks[] = new Notebook[10];
-	Pedido pedido;
 
 	public void mostrarMenu() {
 		System.out.println("=========================================================");
@@ -158,8 +157,9 @@ public class InfoNote {
 			default:
 				System.out.println("Opção inválida!");
 			}
-			Teclado.lerTexto("pressione  uma tecla para continuar...");
 		} while (opcao != 8);
+		Teclado.lerTexto("pressione  uma tecla para continuar...");
+
 	}
 
 }
