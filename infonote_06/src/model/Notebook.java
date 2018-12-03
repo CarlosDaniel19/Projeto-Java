@@ -11,7 +11,7 @@ public class Notebook {
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
-	private int serialNote;
+	private String serialNote;
 	private String modelo;
 	private String descricao;
 	private int estoque;
@@ -19,11 +19,11 @@ public class Notebook {
 	private String figura;
 	private String dataCadastro;
 
-	public int getSerialNote() {
+	public String getSerialNote() {
 		return serialNote;
 	}
 
-	public void setSerialNote(int serialNote) {
+	public void setSerialNote(String serialNote) {
 		this.serialNote = serialNote;
 	}
 
@@ -79,8 +79,8 @@ public class Notebook {
 		super();
 	}
 
-	public Notebook(int serialNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
-			String dataCadastro) {
+	public Notebook(String serialNote, String modelo, String descricao, int estoque, double precoUnitario,
+			String figura, String dataCadastro) {
 		super();
 		this.serialNote = serialNote;
 		this.modelo = modelo;
