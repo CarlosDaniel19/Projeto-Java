@@ -3,14 +3,19 @@ package model;
 public class Pedido {
 	@Override
 	public String toString() {
-		return "Pedido [numero=" + numero + ", dataEmissao=" + dataEmissao + ", formaDePagamento=" + formaDePagamento
-				+ ", valorTotal=" + valorTotal + ", situacao=" + situacao + ", getNumero()=" + getNumero()
-				+ ", getDataEmissao()=" + getDataEmissao() + ", getFormaDePagamento()=" + getFormaDePagamento()
-				+ ", getValorTotal()=" + getValorTotal() + ", getSituacao()=" + getSituacao() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		final String ENTER = "\n";
+		String retValue = "";
+
+		retValue = "Informações sobre Pedido:" + ENTER + "Número do Pedido: " + numeroPedido + ENTER
+				+ "Data de Emissão: " + dataEmissao + ENTER + "Forma de pagamento: " + formaDePagamento + ENTER
+				+ "Valor Total: " + valorTotal + ENTER + "Endereço de Entrega: " + ENTER + "Itens: ";
+		for (int i = 0; i < itens.length; i++) {
+			retValue += itens[i] + ENTER;
+		}
+		return retValue;
 	}
 
-	private int numero;
+	private int numeroPedido;
 	private String dataEmissao;
 	private String formaDePagamento;
 	private double valorTotal;
@@ -30,12 +35,12 @@ public class Pedido {
 		return itens;
 	}
 
-	public int getNumero() {
-		return numero;
+	public int getNumeroPedido() {
+		return numeroPedido;
 	}
 
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setNumeroPedido(int numeroPedido) {
+		this.numeroPedido = numeroPedido;
 	}
 
 	public String getDataEmissao() {
@@ -74,13 +79,15 @@ public class Pedido {
 		super();
 	}
 
-	public Pedido(int numero, String dataEmissao, String formaDePagamento, double valorTotal, String situacao) {
+	public Pedido(int numeroPedido, String dataEmissao, String formaDePagamento, double valorTotal, String situacao,
+			Endereco enderecoEntrega) {
 		super();
-		this.numero = numero;
+		this.numeroPedido = numeroPedido;
 		this.dataEmissao = dataEmissao;
 		this.formaDePagamento = formaDePagamento;
 		this.valorTotal = valorTotal;
 		this.situacao = situacao;
+		this.enderecoEntrega = enderecoEntrega;
 	}
 
 	public boolean inserirItem(ItemDePedido item) {
@@ -91,20 +98,5 @@ public class Pedido {
 			}
 		}
 		return false;
-	}
-
-	public void mostrar() {
-		System.out.println("\n\nPedido:\n");
-		System.out.println("Número: " + this.numero);
-		System.out.println("Data de Emissão: " + this.dataEmissao);
-		System.out.println("Forma de Pagamento: " + this.formaDePagamento);
-		System.out.println("Valor Total: " + this.valorTotal);
-		System.out.println("Situação: " + this.situacao);
-		System.out.println("\n\nItens do Pedido:\n");
-		for (int i = 0; i < itens.length; i++) {
-			if (itens[i] != null) {
-				itens[i].mostrar();
-			}
-		}
 	}
 }

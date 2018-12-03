@@ -3,15 +3,15 @@ package model;
 public class Notebook {
 	@Override
 	public String toString() {
-		return "Notebook [numeroNote=" + numeroNote + ", modelo=" + modelo + ", descricao=" + descricao + ", estoque="
+		return "Notebook [serialNote=" + serialNote + ", modelo=" + modelo + ", descricao=" + descricao + ", estoque="
 				+ estoque + ", precoUnitario=" + precoUnitario + ", figura=" + figura + ", dataCadastro=" + dataCadastro
-				+ ", getNumeroNote()=" + getNumeroNote() + ", getModelo()=" + getModelo() + ", getDescricao()="
+				+ ", getserialNote()=" + getSerialNote() + ", getModelo()=" + getModelo() + ", getDescricao()="
 				+ getDescricao() + ", getEstoque()=" + getEstoque() + ", getPrecoUnitario()=" + getPrecoUnitario()
 				+ ", getFigura()=" + getFigura() + ", getDataCadastro()=" + getDataCadastro() + ", getClass()="
 				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
-	private int numeroNote;
+	private int serialNote;
 	private String modelo;
 	private String descricao;
 	private int estoque;
@@ -19,12 +19,12 @@ public class Notebook {
 	private String figura;
 	private String dataCadastro;
 
-	public int getNumeroNote() {
-		return numeroNote;
+	public int getSerialNote() {
+		return serialNote;
 	}
 
-	public void setNumeroNote(int numeroNote) {
-		this.numeroNote = numeroNote;
+	public void setSerialNote(int serialNote) {
+		this.serialNote = serialNote;
 	}
 
 	public String getModelo() {
@@ -79,10 +79,10 @@ public class Notebook {
 		super();
 	}
 
-	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
+	public Notebook(int serialNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
 			String dataCadastro) {
 		super();
-		this.numeroNote = numeroNote;
+		this.serialNote = serialNote;
 		this.modelo = modelo;
 		this.descricao = descricao;
 		this.estoque = estoque;
@@ -93,7 +93,7 @@ public class Notebook {
 
 	public void mostrar() {
 		System.out.println("\n\nNotebook: \n");
-		System.out.println("Número Note: " + this.numeroNote);
+		System.out.println("Número Note: " + this.serialNote);
 		System.out.println("Modelo: " + this.modelo);
 		System.out.println("Descrição: " + this.descricao);
 		System.out.println("Estoque: " + this.estoque);

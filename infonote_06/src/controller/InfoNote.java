@@ -6,7 +6,7 @@ import model.*;
 
 public class InfoNote {
 
-	UsuarioOld ddd;
+	Usuario ddd;
 	Notebook notebooks[] = new Notebook[10];
 	Pedido pedido;
 	boolean logado = false;
@@ -58,13 +58,10 @@ public class InfoNote {
 		System.out.println("=========================================================");
 		System.out.println("              InfoNote - Cadastro de Usuário             ");
 		System.out.println("=========================================================");
-		int matricula = Teclado.lerInt("Matrícula: ");
 		String login = Teclado.lerTexto("Login: ");
 		String senha = Teclado.lerTexto("Senha: ");
-		String nome = Teclado.lerTexto("Nome: ");
-		String email = Teclado.lerTexto("E-mail: ");
-		String telefone = Teclado.lerTexto("Telefone: ");
-		ddd = new UsuarioOld(matricula, login, senha, nome, email, telefone);
+		int tipo = Teclado.lerInt("Tipo: ");
+		ddd = new Usuario(login, senha, tipo);
 
 		System.out.println("=========================================================");
 		System.out.println("              Usuário cadastrado com sucesso             ");
@@ -76,7 +73,7 @@ public class InfoNote {
 	public void buscarNotebook() {
 		for (int i = 0; i < notebooks.length; i++) {
 			if (notebooks[i] != null) {
-				System.out.println(notebooks[i].getNumeroNote() + "-----" + notebooks[i].getModelo());
+				System.out.println(notebooks[i].getSerialNote() + "-----" + notebooks[i].getModelo());
 			}
 		}
 	}
@@ -87,14 +84,14 @@ public class InfoNote {
 
 	@SuppressWarnings("unlikely-arg-type")
 	public void inserirNotebook() {
-		String numeroNote = Teclado.lerTexto("Informe o número do notebook" + "para compra: ");
+		String serialNote = Teclado.lerTexto("Informe o número do notebook" + "para compra: ");
 		if (pedido == null) {
 			pedido = new Pedido();
 		}
 
 		Notebook aux = null;
 		for (int i = 0; i < notebooks.length; i++) {
-			if (notebooks[i] != null && numeroNote.equals(notebooks[i].getNumeroNote())) {
+			if (notebooks[i] != null && serialNote.equals(notebooks[i].getSerialNote())) {
 				aux = notebooks[i];
 			}
 			if (aux == null) {
