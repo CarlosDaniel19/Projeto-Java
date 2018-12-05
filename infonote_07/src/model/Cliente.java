@@ -68,13 +68,12 @@ public class Cliente extends Usuario {
 	}
 
 	public Cliente(String login, String senha, int tipo, String codigoCliente, String nome, String email,
-			String telefone, Endereco enderecos, Pedido pedido) {
+			String telefone) {
 		super(login, senha, tipo);
 		this.codigoCliente = codigoCliente;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
-		inserirEndereco(enderecos);
 
 	}
 
