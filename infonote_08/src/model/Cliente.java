@@ -99,7 +99,10 @@ public class Cliente extends Usuario implements IUsuario {
 
 	@Override
 	public boolean validarLogin(String login, String senha) {
-		// TODO Auto-generated method stub
+		if (getLogin().equals(login) && getSenha().equals(senha)) {
+			return true;
+		}
+
 		return false;
 	}
 
