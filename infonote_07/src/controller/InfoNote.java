@@ -61,28 +61,13 @@ public class InfoNote {
 		String login = Teclado.lerTexto("Login: ");
 		String senha = Teclado.lerTexto("Senha: ");
 		int tipo = Teclado.lerInt("Tipo: ");
-
-		String logradouro = Teclado.lerTexto("Logradouro: ");
-		String numero = Teclado.lerTexto("Número: ");
-		String complemento = Teclado.lerTexto("Complemento: ");
-		String bairro = Teclado.lerTexto("Bairro: ");
-		String cidade = Teclado.lerTexto("Cidade: ");
-		String estado = Teclado.lerTexto("Estado: ");
-		String cep = Teclado.lerTexto("Cep: ");
-
-		String codigoCliente = Teclado.lerTexto("Código do Cliente: ");
-		String nome = Teclado.lerTexto("Nome: ");
-		String email = Teclado.lerTexto("E-mail: ");
-		String telefone = Teclado.lerTexto("Telefone: ");
-
-		Cliente client = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone);
-		Endereco address = new Endereco(logradouro, numero, complemento, bairro, cidade, estado, cep);
+		ddd = new Usuario(login, senha, tipo);
 
 		System.out.println("=========================================================");
 		System.out.println("              Usuário cadastrado com sucesso             ");
 		System.out.println("=========================================================");
-		System.out.println(address);
-		System.out.println(client);
+
+		System.out.println(ddd);
 	}
 
 	public void buscarNotebook() {
