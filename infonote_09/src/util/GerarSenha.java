@@ -36,8 +36,4 @@ public class GerarSenha {
 		return (char) (Math.random() * (fim - inicio + 1) + inicio);
 	}
 
-	public GerarSenha() {
-		// TODO Auto-generated constructor stub
-	}
-
 }

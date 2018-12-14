@@ -76,35 +76,35 @@ public class InfoNote {
 		System.out.println("=========================================================");
 		String login = Teclado.lerTexto("Login: ");
 		String senha = Teclado.lerTexto("Senha: ");
-		int tipo = Teclado.lerInt("Tipo: ");
-
-		String logradouro = Teclado.lerTexto("Logradouro: ");
-		String numero = Teclado.lerTexto("Número: ");
-		String complemento = Teclado.lerTexto("Complemento: ");
-		String bairro = Teclado.lerTexto("Bairro: ");
-		String cidade = Teclado.lerTexto("Cidade: ");
-		String estado = Teclado.lerTexto("Estado: ");
-		String cep = Teclado.lerTexto("CEP: ");
 		if (senha.equals("") || senha == null) {
 			senha = GerarSenha.gerarSenha();
 			System.out.println("Senha gerada: " + senha);
+			int tipo = Teclado.lerInt("Tipo: ");
+
+			String logradouro = Teclado.lerTexto("Logradouro: ");
+			String numero = Teclado.lerTexto("Número: ");
+			String complemento = Teclado.lerTexto("Complemento: ");
+			String bairro = Teclado.lerTexto("Bairro: ");
+			String cidade = Teclado.lerTexto("Cidade: ");
+			String estado = Teclado.lerTexto("Estado: ");
+			String cep = Teclado.lerTexto("CEP: ");
+
+			String codigoCliente = Teclado.lerTexto("Código do Cliente: ");
+			String nome = Teclado.lerTexto("Nome: ");
+			String email = Teclado.lerTexto("E-mail: ");
+			String telefone = Teclado.lerTexto("Telefone: ");
+
+			Cliente cliente = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone);
+			clienteGlobal = cliente;
+
+			Endereco address = new Endereco(logradouro, numero, complemento, bairro, cidade, estado, cep);
+
+			System.out.println("=========================================================");
+			System.out.println("              Usuário cadastrado com sucesso             ");
+			System.out.println("=========================================================");
+			System.out.println(address);
+			System.out.println(cliente);
 		}
-
-		String codigoCliente = Teclado.lerTexto("Código do Cliente: ");
-		String nome = Teclado.lerTexto("Nome: ");
-		String email = Teclado.lerTexto("E-mail: ");
-		String telefone = Teclado.lerTexto("Telefone: ");
-
-		Cliente cliente = new Cliente(login, senha, tipo, codigoCliente, nome, email, telefone);
-		clienteGlobal = cliente;
-
-		Endereco address = new Endereco(logradouro, numero, complemento, bairro, cidade, estado, cep);
-
-		System.out.println("=========================================================");
-		System.out.println("              Usuário cadastrado com sucesso             ");
-		System.out.println("=========================================================");
-		System.out.println(address);
-		System.out.println(cliente);
 	}
 
 	public void buscarNotebook() {
