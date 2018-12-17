@@ -1,6 +1,6 @@
 package model;
 
-public class Usuario {
+public abstract class Usuario {
 
 	private String login;
 	private String senha;
@@ -19,17 +19,8 @@ public class Usuario {
 	}
 
 	@Override
-	public String toString(){
-	final String ENTER = "\n";
-	String retValue = "";
-	
-	retValue = "Login:" + ENTER +
-	super.toString()+
-	"Usuário: " + login + ENTER +
-	"Senha: " + senha + ENTER +
-	"Tipo: " + tipo + ENTER;
-	
-	return retValue;
+	public String toString() {
+		return "Usuario [login=" + login + ", senha=" + senha + ", tipo=" + tipo + "]";
 	}
 
 	public Usuario(String login, String senha, int tipo) {

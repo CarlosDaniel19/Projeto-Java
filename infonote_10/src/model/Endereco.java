@@ -2,21 +2,13 @@ package model;
 
 public class Endereco {
 	@Override
-	public String toString(){
-	final String ENTER = "\n";
-	String retValue = "";
-	
-	retValue = "Endereço:" + ENTER +
-	super.toString()+
-	"Logradouro: " + logradouro + ENTER + 
-	"Numero:" + numero + ENTER + 
-	"Complemento: " + ENTER +
-	"Bairro: " + ENTER +
-	"Cidade: " + ENTER +
-	"Estado:" + ENTER +
-	"cep: " + cep + ENTER;
-	
-	return retValue;
+	public String toString() {
+		return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", complemento=" + complemento
+				+ ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", cep=" + cep
+				+ ", getLogradouro()=" + getLogradouro() + ", getNumero()=" + getNumero() + ", getComplemento()="
+				+ getComplemento() + ", getBairro()=" + getBairro() + ", getCidade()=" + getCidade() + ", getEstado()="
+				+ getEstado() + ", getCep()=" + getCep() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
 
 	private String logradouro;
