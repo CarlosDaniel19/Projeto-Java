@@ -320,4 +320,24 @@ public class InfoNote {
 		} while (opcao != 5);
 	}
 
+		public void cadastrarMensagem() {
+		System.out.println("====================================");
+		System.out.println("        Cadastro de Notebooks       ");
+		System.out.println("====================================");
+		String nome = Teclado.lerTexto("comando.setString(1, serialNote);\r\n" + 
+				"			comando.setString(2, modelo);\r\n" + 
+				"			comando.setString(3, descricao);\r\n" + 
+				"			comando.setInt(4, estoque);\r\n" + 
+				"			comando.setDouble(5, precoUnitario);\r\n" + 
+				"			comando.setString(6, figura);\r\n" + 
+				"			comando.setString(7, dataCadastro); ");
+		String email = Teclado.lerTexto("E-mail: ");
+		String mensagem = Teclado.lerTexto("Mensagem: ");
+
+		Contato contato = ContatoDAO.inserir(nome, email, mensagem);
+
+		System.out.println(contato);
+		
+	}
+
 }
