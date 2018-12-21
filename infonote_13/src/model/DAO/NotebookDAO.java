@@ -44,7 +44,7 @@ public class NotebookDAO {
 			String sql = "Select * from notebook";
 
 			Conexao conex = new Conexao("jdbc:mysql://localhost:3306/infonote?useTimezone=true&serverTimezone=UTC",
-					"com.mysql.cj.jdbc.Driver", "jeffrey", "password");
+					"com.mysql.cj.jdbc.Driver", "root", "1234");
 
 			Connection con = conex.obterConexao();
 
@@ -58,7 +58,7 @@ public class NotebookDAO {
 			while (rs.next()) {
 				notebook[i++] = new Notebook(rs.getString("serialNote"), rs.getString("modelo"),
 						rs.getString("descricao"), rs.getInt("estoque"), rs.getDouble("precoUnitario"),
-						rs.getString("figura"), rs.getString("dataCadastro"));
+						rs.getString("figura"), rs.getString("dataCadastro"), rs.getInt("idNote"));
 
 			}
 			rs.close();
@@ -70,7 +70,7 @@ public class NotebookDAO {
 		return notebook;
 	}
 
-	public static Notebook excluir(String serialNote) {
+	public static Notebook excluir(int idNote, String serialNote) {
 		Notebook notebook = null;
 		try {
 			String sql = "delete from Notebook where SerialNote = ?";
@@ -90,8 +90,8 @@ public class NotebookDAO {
 		return notebook;
 	}
 
-	public static Notebook atualizar(String descricao, int estoque, double precoUnitario, String figura,
-			String dataCadastro, String note) {
+	public static Notebook atualizar(int idNote, String serialNote, String descricao, int estoque, double precoUnitario, String figura,
+			String dataCadastro) {
 		Notebook notebook = null;
 		try {
 			String sql = "update notebook set descricao = ?, estoque = ?, precoUnitario = ?, figura = ?  where note = ? ";
@@ -103,12 +103,14 @@ public class NotebookDAO {
 
 			PreparedStatement comando = con.prepareStatement(sql);
 
-			comando.setString(1, descricao);
-			comando.setInt(2, estoque);
-			comando.setDouble(3, precoUnitario);
-			comando.setString(4, figura);
-			comando.setString(5, dataCadastro);
-			comando.setString(6, note);
+			comando.setInt(1, idNote);
+			comando.setString(2, serialNote);
+			comando.setString(3, descricao);
+			comando.setInt(4, estoque);
+			comando.setDouble(5, precoUnitario);
+			comando.setString(6, figura);
+			comando.setString(7, dataCadastro);
+			
 
 			comando.executeUpdate();
 

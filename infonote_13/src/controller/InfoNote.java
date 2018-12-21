@@ -10,6 +10,7 @@ import model.*;
 import model.DAO.ClienteDAO;
 import model.DAO.EnderecoDAO;
 import model.DAO.FuncionarioDAO;
+import model.DAO.NotebookDAO;
 import model.DAO.UsuarioDAO;
 
 public class InfoNote {
@@ -281,6 +282,7 @@ public class InfoNote {
 				System.out.println("Login efetuado com sucesso!");
 			} else {
 				System.out.println("Usuário ou senha inválido.");
+				System.exit(0);
 			}
 		}
 	}
@@ -311,7 +313,8 @@ public class InfoNote {
 				info.excluirNotebook();
 				break;
 			case 5:
-				System.out.println("Saída do Sistema");
+				System.out.println("Obrigado e volte sempre!");
+				System.exit(0);
 				break;
 			default:
 				System.out.println("Opção inválida!");
@@ -320,24 +323,67 @@ public class InfoNote {
 		} while (opcao != 5);
 	}
 
-		public void cadastrarMensagem() {
+	public void cadastrarNotebook() {
 		System.out.println("====================================");
 		System.out.println("        Cadastro de Notebooks       ");
 		System.out.println("====================================");
-		String nome = Teclado.lerTexto("comando.setString(1, serialNote);\r\n" + 
-				"			comando.setString(2, modelo);\r\n" + 
-				"			comando.setString(3, descricao);\r\n" + 
-				"			comando.setInt(4, estoque);\r\n" + 
-				"			comando.setDouble(5, precoUnitario);\r\n" + 
-				"			comando.setString(6, figura);\r\n" + 
-				"			comando.setString(7, dataCadastro); ");
-		String email = Teclado.lerTexto("E-mail: ");
-		String mensagem = Teclado.lerTexto("Mensagem: ");
+		String serialNote = Teclado.lerTexto("serial Note: ");
+		String modelo = Teclado.lerTexto("modelo: ");
+		String descricao = Teclado.lerTexto("descricao: ");
+		int estoque = Teclado.lerInt("estoque: ");
+		double precoUnitario = Teclado.lerDouble("precoUnitario: ");
+		String figura = Teclado.lerTexto("figura: ");
+		String dataCadastro = Teclado.lerTexto("data cadastro: ");
 
-		Contato contato = ContatoDAO.inserir(nome, email, mensagem);
+		Notebook notebook = NotebookDAO.inserir(serialNote, modelo, descricao, estoque, precoUnitario, figura,
+				dataCadastro);
 
-		System.out.println(contato);
-		
+		System.out.println(notebook);
+
+	}
+
+	private void mostrarNotebooks() {
+		Notebook[] notebook = NotebookDAO.buscarTodos();
+		for (int i = 0; i < notebook.length; i++) {
+			if (notebook[i] != null) {
+				System.out.println(notebook[i].getSerialNote() + "-----"
+						+ notebook[i].getModelo() + "-----" + notebook[i].getDescricao() + "-----"
+						+ notebook[i].getFigura() + "-----" + notebook[i].getDataCadastro() + "-----"
+						+ notebook[i].getEstoque() + "-----" + notebook[i].getPrecoUnitario() + "-----" + notebook[i].getIdNote());
+				
+			}
+		}
+	}
+
+	public void editarNotebook() {
+		System.out.println("====================================");
+		System.out.println(" Editar Notebook ");
+		System.out.println("====================================");
+		int idNote = Teclado.lerInt("Informe o idNote do Notebook a ser atualizado: ");
+		String serialNote = Teclado.lerTexto("Informe o serialNote do Notebook a ser atualizado: ");
+		String descricao = Teclado.lerTexto("Descricao: ");
+		int estoque = Teclado.lerInt("Estoque: ");
+		double precoUnitario = Teclado.lerDouble("Preço Unitário: ");
+		String figura = Teclado.lerTexto("Figura: ");
+		String dataCadastro = Teclado.lerTexto("Data de Cadastro: ");
+
+		Notebook notebook = NotebookDAO.atualizar(idNote, serialNote, descricao, estoque, precoUnitario, figura,
+				dataCadastro);
+		System.out.println("Notebook atualizado com sucesso");
+		System.out.println(notebook);
+	}
+
+	private void excluirNotebook() {
+
+		System.out.println("====================================");
+		System.out.println(" Excluir de Notebook ");
+		System.out.println("====================================");
+		int idNote = Teclado.lerInt("Informe o IdNote do Notebook a ser apagado.");
+		String serialNote = Teclado.lerTexto("Informe o SeriaNote do Notebook a ser excluido: ");
+
+		Notebook notebook = NotebookDAO.excluir(idNote, serialNote);
+		System.out.println(notebook);
+
 	}
 
 }

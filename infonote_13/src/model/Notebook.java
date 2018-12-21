@@ -17,6 +17,7 @@ public class Notebook {
 		return retValue;
 	}
 
+	private int idNote;
 	private String serialNote;
 	private String modelo;
 	private String descricao;
@@ -86,6 +87,19 @@ public class Notebook {
 	}
 
 	public Notebook(String serialNote, String modelo, String descricao, int estoque, double precoUnitario,
+			String figura, String dataCadastro, int idNote) {
+		super();
+		this.serialNote = serialNote;
+		this.modelo = modelo;
+		this.descricao = descricao;
+		this.estoque = estoque;
+		this.precoUnitario = precoUnitario;
+		this.figura = figura;
+		this.dataCadastro = dataCadastro;
+		this.idNote = idNote;
+	}	
+	
+	public Notebook(String serialNote, String modelo, String descricao, int estoque, double precoUnitario,
 			String figura, String dataCadastro) {
 		super();
 		this.serialNote = serialNote;
@@ -105,5 +119,9 @@ public class Notebook {
 		System.out.println("Estoque: " + this.estoque);
 		System.out.println("Preço Unitário: " + this.precoUnitario);
 		System.out.println("Figura: " + this.figura);
+	}
+
+	public int getIdNote() {
+		return idNote;
 	}
 }
